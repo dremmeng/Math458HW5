@@ -1,0 +1,102 @@
+% LaTeX Article Template - customizing page format
+%
+% LaTeX document uses 10-point fonts by default.  To use
+% 11-point or 12-point fonts, use \documentclass[11pt]{article}
+% or \documentclass[12pt]{article}.
+\documentclass{article}
+
+% Set left margin - The default is 1 inch, so the following 
+% command sets a 1.25-inch left margin.
+\setlength{\oddsidemargin}{0.25in}
+
+% Set width of the text - What is left will be the right margin.
+% In this case, right margin is 8.5in - 1.25in - 6in = 1.25in.
+\setlength{\textwidth}{6in}
+
+% Set top margin - The default is 1 inch, so the following 
+% command sets a 0.75-inch top margin.
+\setlength{\topmargin}{-0.25in}
+
+% Set height of the text - What is left will be the bottom margin.
+% In this case, bottom margin is 11in - 0.75in - 9.5in = 0.75in
+\setlength{\textheight}{8in}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\graphicspath{ {./} }
+\setlength{\parskip}{5pt} 
+\pagestyle{fancyplain}
+
+% Universes
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+% Groups commands
+\newcommand{\inv}{^{-1}}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\lr}[1]{\langle #1 \rangle}
+% Set the beginning of a LaTeX document
+\begin{document}
+
+\lhead{Drew Remmenga MATH 458}
+\rhead{HW \#5}
+%\lhead{Independent Study}
+%\rhead{R Lab}
+
+
+\begin{enumerate}
+\item (Problem from the Reading Quiz) 
+    
+\textbf{Lagrange's Theorem.} Let $G$ be a finite group. If $H$ is a subgroup of $G$, then $|H|$ divides $|G|$.
+
+The following example in the textbook is given to show the converse of Lagrange's Theorem is false. 
+The author left out a lot of the details in the example (as usual). Fill in the missing details to write a more complete explanation. 
+\begin{enumerate}
+\item State the converse of Lagrange's Theorem. Given a group $G$ for any non empty subset $H$ of $G$ if $|H|$ divides $|G|$ then $H$ is a subgroup of $G$.
+
+\item $A_4$ has eight elements of order 3 ($\alpha_5$ through $\alpha_{12}$ in the Table 5.1 in text).
+Explain why those elements and no others have order 3. (Do not compute the orders directly.)  $A_4 = \{I,(1,2,3),(1,3,2),(1,2,4),(1,4,2),(1,3,4),(1,4,3),(2,3,4),(2,4,3),(1,2)(3,4),(1,3)(2,4),(1,4)(2,3)\}$ Clearly $A_4$ has 8 elements of three cycles so we can directly say it has 8 elements of order 3.
+
+\item Define the notation used.
+\begin{enumerate}
+    
+    \item Let $H$ be a subgroup of $A_4$ of order 6. 
+    
+    \item Let $a$ be an element of order 3 in $A_4$. 
+
+\end{enumerate}
+
+\item Suppose $a\not\in H$. Then $A_4=H\cup aH$. Why? Given that $A \not \in H$. Then to show that $A_4 = H\cup aH$. As $a$ be an element of order 3 $a \in A_4$. Then $H$ be a subgroup of $A_4$ So $e \in H$ so $ae \in a H$. Then as $a \not \in H$ but $a \in aH \implies a \in H \cup aH$. Now let $x \in H \cup aH \implies $either $x \in H$ or $x\in aH$. If $x \in H$ and $H$ is a subgroup of $A_4$ order 6. Clearly $H \subseteq A_4$ due to subgroup definition. So $x \in A_4 \implies H \cup aH \subseteq A_4$. This implies $A_4 = H \cup aH$.
+
+\item Then $a^2\in H$ or $a^2\in aH$. Why? As $a \in A_4 \implies a^{3} = e$ because it is element of order 3 in $A_4$. And also given $H$ is a subgroup of order 6 it means it has at least one lement of order 6. Now as $a^{3} = e \implies (a^{3})^{2} = a^{6} = e^{2} =e$. Thus $a^{2} \in H$. Or if $a^{2} \not \in H$ then $a^{2} \in aH$ is trivially true. 
+
+\item If $a^2\in H$, then $a\in H$. Why? And why is ``this case ruled out''? If given $a^{2} \in H$. Then as $H$ is a subgroup of $A_4$ of order 6 so $(a^{2})^{6} = e = a^{12}$. By right cancellation law we obtain $a^{3} = e \implies a \in H$. Now this is ruled out because it is given that $a \not \in H$.
+
+\item If $a^2\in aH$, then $a^2=ah$ for some $h\in H$. So $a\in H$. Why? For $a^{2} \in a H \implies a^2 = ah $ for some $h \in H$. Now by left cancellation law $a^{2}=aa=ah$ Multiply by $a^{-1}$ on both sides and we get $a=h$. So $a \in H$. 
+
+\item So any subgroup of $A_4$ of order 6 size must contain all elements of $A_4$ of order 3. Why? And why is this ``absurd''? As given $H$ is a subgroup of order 6. That is it has only 6 elements in numbers how is possible that all the eight elements of order 3 within itself. So this statement is absurd in that it should contain all eight elements of order 3. 
+
+\item What initial assumption must be false given this contradiction? The inital statement let $H$ be a subgroup of $A_4$ of order 6 is contradictory. 
+
+\item How does this example show the converse of Lagrange's Theorem is false (refer to your answer in part (a))? Now as the order of $A_4$ is 12 and we also have taken the subset of given group of order 6. 6 divides 12 but it is not true that the subset becomes a subgroup. 
+
+\end{enumerate}
+
+
+\item Let $H$ be a subgroup of the $D_n$ with odd order. Show that $H$ must be cyclic. (Recall: $D_n$ can be defined as $D_n=\langle r,f\rangle$ where $|r|=n$, $|f|=2$, and $r^kf=fr^{-k}$.) Let $H$ denote reflections. Then we have $a = r^{i} f$ and $b = r^{j} f$ both $\in H$. Then $r^{i}f(r^{j}f)^{-1} = (r^{i}f)^{-1} r ^{j} f = fr^{-i} r ^{j} = f^{2} r ^{i -j}$. Then we have $r^{i-j} \in H$ which is a contradictions. Hence the set of reflections can not form a subgroup. Hence $H$ must be with only rotations. So $|H|$ = n = odd and $H = \langle r \rangle$. As set of rotations forms a group and $r^{n} = e$ and $r^{i} r{j} - r ^{j} r^{i}$ ie comutative. Hence $H$ is a ciclic group of odd order generated by $r$.
+
+\item Let $H$ be a subgroup of $S_n$. Use properties of cosets to prove that either every member of $H$ is an even permutation or exactly half of the members is even. Case 1: $H \leq S_n$. If $H$ contains no odd permutations then $H$ contains only even permutations and we are done. Case 2: without the loss of generality assume $H$ has at least one odd permutation $s$ say. Then for any odd permutation $b$ the permutation $sb \in H$ and is an even permutation since the product of any two odd permutations is an even permutation. That is coresponding to each odd permutation there exists an even permutations. Therefore the number of even permutations is the same as the number of odd permutations or half the members are even.
+
+\item Prove that an abelian group of order 15 is cyclic. Do not use Cauchy's Theorem for Abelian Groups. Let $G$ be a group of order 15. Then by Lagrange's Theorem G has subgroups of order 3 and 5. Let $n_3$ be the number of subgroups of order 3. Then $n_3 = 1+3k$ for some integer $k$. Since $n_3 \| |G| \implies k = 0$ and hence $n_3 =1$. Let $n_5$ be the number of subgroups of order 5. Then $n_5 = 1+ 5k$ for some integer $k$. Since $n_5 \| |G| \implies k=0$ and hence $n_5 =1$. So $G$ has two subgroups $H$ and $K$ where the order of one is 5 and the order of the other is 3. Now without loss of generality $|H \cap K | \| |H| = 3$ and $|H \cap K | \| |K| = 5$ so  $|H \cap K | = 1$ so $H \cap K = {e}$. So we have $|HK| = \frac{|H||K|}{|H\cap K|} = \frac{3*5}{1} = 15 = |G|$. Imples $G=HK$ Therefore $G$ is internal direct product of $H$ and $K$ and hence $G \cong H \times K$. Since $H$ and $K$ are both cyclic groups of order 3 and 5 respectively and gcd(3,5)=1 it follows that $H \times K$ is cyclic and hence $G$ is cyclic. Therefore any group of order 15 is cyclic and implies an abelian group of order 15 is also cyclic. 
+
+\end{enumerate}
+\end{document}

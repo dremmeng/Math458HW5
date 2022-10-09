@@ -1,0 +1,86 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr, lastpage}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb,amsthm}
+\usetikzlibrary{calc}
+
+
+% Universes
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+% Groups commands
+\newcommand{\inv}{^{-1}}
+\newcommand{\lcm}{\mathrm{lcm}}
+\newcommand{\lr}[1]{\langle #1 \rangle}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\iso}{\cong}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0cm}
+\pagestyle{fancy}
+\lhead{MATH458 Abstract Algebra}
+\rhead{Homework 4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\section*{Homework 4}
+
+
+\begin{enumerate}
+\item (Problem from the Reading Quiz) 
+    
+\textbf{Lagrange's Theorem.} Let $G$ be a finite group. If $H$ is a subgroup of $G$, then $|H|$ divides $|G|$.
+
+%%% Delete lines 42-45 since you don't have the image file I used
+The following example in the textbook is given to show the converse of Lagrange's Theorem is false. 
+\begin{center}
+\includegraphics[scale=.45]{LagrangeConverse.png}
+\end{center}
+\vspace{-1em}
+The author left out a lot of the details in the example (as usual). Fill in the missing details to write a more complete explanation. 
+\begin{enumerate}
+\item State the converse of Lagrange's Theorem.
+
+\item $A_4$ has eight elements of order 3 ($\alpha_5$ through $\alpha_{12}$ in the Table 5.1 in text).
+Explain why those elements and no others have order 3. (Do not compute the orders directly.) 
+
+\item Define the notation used.
+\begin{enumerate}
+    
+    \item Let $H$ be \dots 
+    
+    \item Let $a$ be \dots 
+
+\end{enumerate}
+
+\item Suppose $a\not\in H$. Then $A_4=H\cup aH$. Why?
+
+\item Then $a^2\in H$ or $a^2\in aH$. Why?
+
+\item If $a^2\in H$, then $a\in H$. Why? And why is ``this case ruled out''?
+
+\item If $a^2\in aH$, then $a^2=ah$ for some $h\in H$. So $a\in H$. Why?
+
+\item So any subgroup of $A_4$ of order 6 size must contain all elements of $A_4$ of order 3. Why? And why is this ``absurd''?
+
+\item What initial assumption must be false given this contradiction?
+
+\item How does this example show the converse of Lagrange's Theorem is false (refer to your answer in part (a))?
+
+\end{enumerate}
+
+
+\item Let $H$ be a subgroup of the $D_n$ with odd order. Show that $H$ must be cyclic. (Recall: $D_n$ can be defined as $D_n=\langle r,f\rangle$ where $|r|=n$, $|f|=2$, and $r^kf=fr^{-k}$.)
+
+\item Let $H$ be a subgroup of $S_n$. Use properties of cosets to prove that either every member of $H$ is an even permutation or exactly half of the members is even. 
+
+\item Prove that an abelian group of order 15 is cyclic. Do not use Cauchy's Theorem for Abelian Groups. 
+
+\end{enumerate}
+\end{document}
